@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
             binding.emailEditText.setText(registeredEmail)
         }
 
-        // LOGIN BUTTON (Passes USER_EMAIL to MainActivity for Rubric 2)
+        // LOGIN BUTTON
         binding.loginButton.setOnClickListener {
             val email = binding.emailEditText.text.toString().trim()
             val password = binding.passwordEditText.text.toString()
@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("USER_EMAIL", email)
+            intent.putExtra("EMAIL", email) // Updated key to "EMAIL"
             startActivity(intent)
             finish()
         }
